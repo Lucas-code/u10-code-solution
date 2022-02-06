@@ -1,0 +1,945 @@
+{
+  materials: [
+    {
+      name: 'Tail',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'Tail_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.29999999999999999,
+            0.29999999999999999,
+            0.29999999999999999,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'Tail_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'Tail_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'Ribcage',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'Ribcage_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.29999999999999999,
+            0.29999999999999999,
+            0.29999999999999999,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'Ribcage_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'Ribcage_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'Area.034',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: 'Area.034_normal',
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'Area.034_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'Right_flipper',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'Right_flipper_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.29999999999999999,
+            0.29999999999999999,
+            0.29999999999999999,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'Right_flipper_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'Right_flipper_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'Left_flipper',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'Left_flipper_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.30049500000000001,
+            0.30049500000000001,
+            0.30049500000000001,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'Left_flipper_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'Left_flipper_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'Skull',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'Skull_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.29999999999999999,
+            0.29999999999999999,
+            0.29999999999999999,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'Skull_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'Skull_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'material',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'material_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.29999999999999999,
+            0.29999999999999999,
+            0.29999999999999999,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'material_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'material_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'defaultMat.011',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'defaultMat.011_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.29999999999999999,
+            0.29999999999999999,
+            0.29999999999999999,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'defaultMat.011_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'defaultMat.011_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'Spine',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'Spine_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.29999999999999999,
+            0.29999999999999999,
+            0.29999999999999999,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'Spine_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'Spine_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'Cervical',
+      parameters: [
+        {
+          baseColorFactor: null,
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          diffuseColor: 'Cervical_diffuse',
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: null,
+        },
+        {
+          roughnessFactor: null,
+        },
+        {
+          specularFactor: [
+            0.29999999999999999,
+            0.29999999999999999,
+            0.29999999999999999,
+          ],
+        },
+        {
+          glossinessFactor: 1,
+        },
+        {
+          specularGlossiness: 'Cervical_specularGlossiness',
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'Cervical_occlusion',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/BlueWhaleSkeleton/scene.gltf',
+    name: 'scene',
+    recenter: 'root',
+    scale: 0.075379000000000002,
+  },
+  samplers: [
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Tail_specularGlossiness.png',
+      name: 'Tail_specularGlossiness',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Tail_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Tail_diffuse.jpeg',
+      name: 'Tail_diffuse',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Tail_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Tail_occlusion.png',
+      name: 'Tail_occlusion',
+      params: {
+        usage_type: 'Data',
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Tail_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Ribcage_specularGlossiness.png',
+      name: 'Ribcage_specularGlossiness',
+      pipeline_name: 'textures/Ribcage_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Cervical_specularGlossiness.png',
+      name: 'Cervical_specularGlossiness',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Cervical_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Right_flipper_occlusion.png',
+      name: 'Right_flipper_occlusion',
+      params: {
+        usage_type: 'Data',
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Right_flipper_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Ribcage_diffuse.jpeg',
+      name: 'Ribcage_diffuse',
+      pipeline_name: 'textures/Ribcage_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Ribcage_occlusion.png',
+      name: 'Ribcage_occlusion',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'textures/Ribcage_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Area.034_normal.png',
+      name: 'Area.034_normal',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'textures/Area.034_normal.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Area.034_occlusion.png',
+      name: 'Area.034_occlusion',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'textures/Area.034_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Right_flipper_diffuse.jpeg',
+      name: 'Right_flipper_diffuse',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Right_flipper_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Right_flipper_specularGlossiness.png',
+      name: 'Right_flipper_specularGlossiness',
+      pipeline_name: 'textures/Right_flipper_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Left_flipper_diffuse.jpeg',
+      name: 'Left_flipper_diffuse',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Left_flipper_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Left_flipper_specularGlossiness.png',
+      name: 'Left_flipper_specularGlossiness',
+      pipeline_name: 'textures/Left_flipper_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Left_flipper_occlusion.png',
+      name: 'Left_flipper_occlusion',
+      params: {
+        usage_type: 'Data',
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Left_flipper_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Skull_diffuse.jpeg',
+      name: 'Skull_diffuse',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Skull_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Skull_specularGlossiness.png',
+      name: 'Skull_specularGlossiness',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Skull_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Skull_occlusion.png',
+      name: 'Skull_occlusion',
+      params: {
+        usage_type: 'Data',
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Skull_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\material_diffuse.jpeg',
+      name: 'material_diffuse',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/material_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\material_specularGlossiness.png',
+      name: 'material_specularGlossiness',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/material_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\material_occlusion.png',
+      name: 'material_occlusion',
+      params: {
+        usage_type: 'Data',
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/material_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\defaultMat.011_diffuse.jpeg',
+      name: 'defaultMat.011_diffuse',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/defaultMat.011_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\defaultMat.011_specularGlossiness.png',
+      name: 'defaultMat.011_specularGlossiness',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/defaultMat.011_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\defaultMat.011_occlusion.png',
+      name: 'defaultMat.011_occlusion',
+      params: {
+        usage_type: 'Data',
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/defaultMat.011_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Spine_diffuse.jpeg',
+      name: 'Spine_diffuse',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Spine_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Spine_specularGlossiness.png',
+      name: 'Spine_specularGlossiness',
+      pipeline_name: 'textures/Spine_specularGlossiness.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Spine_occlusion.png',
+      name: 'Spine_occlusion',
+      params: {
+        usage_type: 'Data',
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Spine_occlusion.png',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Cervical_diffuse.jpeg',
+      name: 'Cervical_diffuse',
+      params: {
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Cervical_diffuse.jpeg',
+    },
+    {
+      file: 'sampledata/BlueWhaleSkeleton\\textures\\Cervical_occlusion.png',
+      name: 'Cervical_occlusion',
+      params: {
+        usage_type: 'Data',
+        wrap_s: 'ClampToEdge',
+        wrap_t: 'ClampToEdge',
+      },
+      pipeline_name: 'textures/Cervical_occlusion.png',
+    },
+  ],
+  version: '0.54:2',
+}

@@ -24,9 +24,10 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.ar.sceneform.plugin'
 
 android {
-    compileSdkVersion 28 //flutter.compileSdkVersion
+    compileSdkVersion 29 //flutter.compileSdkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -45,9 +46,10 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.u10_solution"
         minSdkVersion 24 //flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion 29 //flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -74,3 +76,8 @@ dependencies {
 	
     implementation 'com.google.ar:core:1.8.0'
 }
+
+sceneform.asset('sampledata/BlueWhaleSkeleton/scene.gltf', // 'Source Asset Path' specified during import.
+        'default',                            // 'Material Path' specified during import.
+        'sampledata/BlueWhaleSkeleton/scene.sfa',         // '.sfa Output Path' specified during import.
+        'src/main/assets/WhaleModel')              // '.sfb Output Path' specified during import.

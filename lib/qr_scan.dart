@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'dart:io';
+import 'main.dart';
 // import 'package:flutter/foundation.dart';
 
 // void main() {
@@ -33,6 +34,7 @@ import 'dart:io';
 // }
 
 Barcode? result;
+var resultNotifier = ValueNotifier<Barcode?>(result);
 
 class QRCodeScannerView extends StatefulWidget {
   const QRCodeScannerView({Key? key}) : super(key: key);
@@ -75,6 +77,7 @@ class _QRCodeScannerViewState extends State<QRCodeScannerView> {
       key: qrKey,
       onQRViewCreated: _onQRViewCreated,
     );
+    // return Container();
     // Expanded(
     //     flex: 1,
     //     child: Center(

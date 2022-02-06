@@ -1,37 +1,109 @@
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
+import 'main.dart';
 
-class HelloWorld extends StatefulWidget {
-  const HelloWorld({Key? key}) : super(key: key);
+class ARScreen extends StatefulWidget {
+  const ARScreen({Key? key}) : super(key: key);
   @override
-  _HelloWorldState createState() => _HelloWorldState();
+  _ARScreenState createState() => _ARScreenState();
 }
 
-class _HelloWorldState extends State<HelloWorld> {
+class _ARScreenState extends State<ARScreen> {
+  int _selectedIndex = 0;
+  static const List<Widget> _widgetOptions = <Widget>[];
   late ArCoreController arCoreController;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Hello World'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Image.asset(
+          "assets/nhm_logo.png",
+          width: 100,
+          height: 100,
         ),
-        body: ArCoreView(
-          onArCoreViewCreated: _onArCoreViewCreated,
-        ),
+        centerTitle: true,
+        backgroundColor: Colors.black54,
+        actions: (_selectedIndex != 2)
+            ? <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.arrow_forward),
+                  tooltip: "Next Section",
+                  onPressed: () {
+                    setState(() {
+                      _selectedIndex = _selectedIndex + 1;
+                    });
+                  },
+                )
+              ]
+            : <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.check_circle_outline_outlined),
+                  tooltip: "End Session",
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ExhibitEndPage()));
+                  },
+                )
+              ],
+      ),
+      body: ArCoreView(
+        onArCoreViewCreated: _onArCoreViewCreated,
+        enableTapRecognizer: true,
+        enablePlaneRenderer: true,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.thumb_up_alt), label: "Section 1"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.thumb_up_alt), label: "Section 2"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.thumb_up_alt), label: "Section 3")
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
       ),
     );
   }
 
   void _onArCoreViewCreated(ArCoreController controller) {
     arCoreController = controller;
+    // arCoreController.onNodeTap = (name) => onTapHandler(name);
+    arCoreController.onPlaneTap = _onPlaneTap;
 
-    _addSphere(arCoreController);
-    _addCylindre(arCoreController);
-    _addCube(arCoreController);
+    // _addSphere(arCoreController);
+    // _addCylindre(arCoreController);
+    // _addCube(arCoreController);
   }
+
+  _onPlaneTap(List<ArCoreHitTestResult> hits) => _onHitDetected(hits.first);
+
+  _onHitDetected(ArCoreHitTestResult plane) {
+    arCoreController.addArCoreNodeWithAnchor(
+      ArCoreReferenceNode(
+        name: "WhaleModel",
+        object3DFileName: "WhaleModel.sfb",
+        position: plane.pose.translation,
+        rotation: plane.pose.rotation,
+      ),
+    );
+  }
+
+  void onTapHandler(String name) {}
+
+  void _addWhaleModel(ArCoreController controller) {}
 
   void _addSphere(ArCoreController controller) {
     final material =
@@ -79,6 +151,10 @@ class _HelloWorldState extends State<HelloWorld> {
     );
     controller.addArCoreNode(node);
   }
+
+  // void _stageOneScreen() {
+  //   return
+  // }
 
   @override
   void dispose() {
