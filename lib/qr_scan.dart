@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:u10_solution/augmented.dart';
 import 'dart:io';
 import 'main.dart';
 // import 'package:flutter/foundation.dart';
@@ -33,9 +35,6 @@ import 'main.dart';
 //   }
 // }
 
-Barcode? result;
-var resultNotifier = ValueNotifier<Barcode?>(result);
-
 class QRCodeScannerView extends StatefulWidget {
   const QRCodeScannerView({Key? key}) : super(key: key);
 
@@ -55,6 +54,7 @@ class QRCodeScannerView extends StatefulWidget {
 }
 
 class _QRCodeScannerViewState extends State<QRCodeScannerView> {
+  Barcode? result;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   // Barcode? result;
   QRViewController? controller;
@@ -73,23 +73,68 @@ class _QRCodeScannerViewState extends State<QRCodeScannerView> {
 
   @override
   Widget build(BuildContext context) {
-    return QRView(
-      key: qrKey,
-      onQRViewCreated: _onQRViewCreated,
-    );
-    // return Container();
-    // Expanded(
-    //     flex: 1,
-    //     child: Center(
-    //       child: (result != null)
-    //           ? Text(
-    // 'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
-    //           : const Text('Scan a code'),
-    //     ),
-    //   )
-    // ],
-    // ),
-    // );
+    return Scaffold(
+        appBar: const StandardAppBar(),
+        drawer: const MainMenu(),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Scan QR Code",
+                style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
+              ),
+              const Divider(
+                thickness: 5,
+                color: Colors.black,
+              ),
+              SizedBox(
+                height: 200,
+                width: 200,
+                child: QRView(
+                  key: qrKey,
+                  onQRViewCreated: _onQRViewCreated,
+                ),
+              ),
+              const Divider(
+                thickness: 5,
+                color: Colors.black,
+              ),
+              if (result != null && describeEnum(result!.format) == "qrcode")
+                SizedBox(
+                  height: 60,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned.fill(
+                          child: Container(
+                            color: Colors.yellow,
+                          ),
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                              padding: const EdgeInsets.all(16.0),
+                              primary: Colors.black,
+                              textStyle: const TextStyle(fontSize: 20),
+                              minimumSize: const Size(200, 70)),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const ARScreen()));
+                          },
+                          child: const Text('Continue'),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+            ],
+          ),
+        ));
   }
 
   void _onQRViewCreated(QRViewController controller) {

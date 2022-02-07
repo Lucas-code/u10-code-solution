@@ -1,12 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'qr_scan.dart';
-import 'augmented.dart';
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart'
     show ArCoreController;
+import 'package:flutter/services.dart';
 
-int normalTextFontSize = 10;
+double normalTextFontSize = 10;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +25,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     return const MaterialApp(
       title: 'NHM AR App',
       home: HomePage(),
@@ -42,7 +44,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _biggerFont = const TextStyle(
-    fontSize: 30,
+    fontSize: 35,
     fontWeight: FontWeight.bold,
   );
   @override
@@ -67,9 +69,12 @@ class _HomePageState extends State<HomePage> {
               width: 125,
               height: 125,
             ),
-            Text(
+            const Text(
               "Augmented Reality App",
-              style: _biggerFont,
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             CarouselSlider(
               items: [
@@ -168,7 +173,10 @@ class MainMenu extends StatelessWidget {
       child: ListView(
         children: <Widget>[
           ListTile(
-            title: const Text("Home"),
+            title: Text(
+              "Home",
+              style: TextStyle(fontSize: normalTextFontSize),
+            ),
             onTap: () {
               Navigator.push(
                   context,
@@ -177,7 +185,10 @@ class MainMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text("Settings"),
+            title: Text(
+              "Settings",
+              style: TextStyle(fontSize: normalTextFontSize),
+            ),
             onTap: () {
               Navigator.push(
                   context,
@@ -186,7 +197,10 @@ class MainMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text("Instructions"),
+            title: Text(
+              "Instructions",
+              style: TextStyle(fontSize: normalTextFontSize),
+            ),
             onTap: () {
               Navigator.push(
                   context,
@@ -202,7 +216,9 @@ class MainMenu extends StatelessWidget {
 }
 
 class StandardAppBar extends StatelessWidget with PreferredSizeWidget {
-  const StandardAppBar({Key? key}) : super(key: key);
+  const StandardAppBar({
+    Key? key,
+  }) : super(key: key);
 
 //   @override
 //   _StandardAppBarState createState() => _StandardAppBarState();
@@ -236,71 +252,7 @@ class QRCodeScannerPage extends StatefulWidget {
 class _QRCodeScannerPageState extends State<QRCodeScannerPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: const StandardAppBar(),
-        drawer: const MainMenu(),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Text(
-                "Scan QR Code",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              const Divider(
-                thickness: 5,
-                color: Colors.black,
-              ),
-              const SizedBox(
-                height: 200,
-                width: 200,
-                child: QRCodeScannerView(),
-              ),
-              const Divider(
-                thickness: 5,
-                color: Colors.black,
-              ),
-              _buildContinueButton()
-            ],
-          ),
-        ));
-  }
-
-  Widget _buildContinueButton() {
-    print((result != null) && describeEnum(result!.format) == "qrcode");
-    return (result != null) && describeEnum(result!.format) == "qrcode"
-        ? SizedBox(
-            height: 60,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(4),
-              child: Stack(
-                children: <Widget>[
-                  Positioned.fill(
-                    child: Container(
-                      color: Colors.yellow,
-                    ),
-                  ),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                        padding: const EdgeInsets.all(16.0),
-                        primary: Colors.black,
-                        textStyle: const TextStyle(fontSize: 20),
-                        minimumSize: const Size(200, 70)),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  const ARScreen()));
-                    },
-                    child: const Text('Continue'),
-                  ),
-                ],
-              ),
-            ),
-          )
-        : Container();
+    return const QRCodeScannerView();
   }
 }
 
@@ -322,37 +274,47 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const StandardAppBar(),
-      body: Column(
-        children: [
-          const Text("Text Size:"),
-          DropdownButton(
-            hint: Text(
-              normalTextFontSize.toString(),
-              style: const TextStyle(color: Colors.blue),
-            ),
-            isExpanded: true,
-            iconSize: 30.0,
-            style: const TextStyle(color: Colors.blue),
-            items: [10, 12, 14, 16, 18, 20].map(
-              (val) {
-                return DropdownMenuItem<int>(
-                  value: val,
-                  child: Text(val.toString()),
-                );
-              },
-            ).toList(),
-            onChanged: (val) {
-              setState(
-                () {
-                  normalTextFontSize = val as int;
+        appBar: const StandardAppBar(),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Settings",
+                style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Text Size:",
+                style: TextStyle(fontSize: normalTextFontSize),
+              ),
+              DropdownButton(
+                hint: Text(
+                  normalTextFontSize.toString(),
+                  style: const TextStyle(color: Colors.blue),
+                ),
+                isExpanded: true,
+                iconSize: 30.0,
+                style: const TextStyle(color: Colors.blue),
+                items: <double>[10, 12, 14, 16, 18, 20].map(
+                  (val) {
+                    return DropdownMenuItem<double>(
+                      value: val,
+                      child: Text(val.toString()),
+                    );
+                  },
+                ).toList(),
+                onChanged: (val) {
+                  setState(
+                    () {
+                      normalTextFontSize = val as double;
+                    },
+                  );
                 },
-              );
-            },
+              ),
+            ],
           ),
-        ],
-      ),
-    );
+        ));
   }
 }
 
@@ -370,11 +332,18 @@ class _InstructionsPageState extends State<InstructionsPage> {
       appBar: const StandardAppBar(),
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Text("Instructions"),
-            Image.asset("assets/instruction_image.png"),
             const Text(
-                "Found something you want to learn about? click the image to get more information."),
+              "Instructions",
+              style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold),
+            ),
+            Image.asset("assets/instruction_image.png"),
+            Text(
+              "Found something you want to learn about? click the image to get more information.",
+              style: TextStyle(fontSize: normalTextFontSize),
+            ),
             SizedBox(
               height: 60,
               child: ClipRRect(
@@ -412,37 +381,72 @@ class _ExhibitEndPageState extends State<ExhibitEndPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const StandardAppBar(),
-        body: ListView(
-          children: const [
-            Text("Thank you for visiting the"),
-            Text("Wildlife Garden"),
-            Text("Exhibit"),
-            Divider(
+      appBar: const StandardAppBar(),
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const Text(
+              "Thank you for visiting the",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+            const Text(
+              "Wildlife Garden",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+            const Text("Exhibit",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)),
+            const Divider(
               thickness: 5,
             ),
-            Text("Further Reading"),
-            Text(
+            const Text(
+              "Further Reading",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+            const Text(
                 "https://www.nhm.ac.uk/visit/galleries-and-museum-map/wildlife-garden.html"),
+            const Divider(
+              thickness: 5,
+            ),
+            const Text(
+              "Exhibits you may like",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+            const Text(
+              "Our broken planet",
+            ),
+            SizedBox(
+                height: 60,
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned.fill(
+                          child: Container(
+                            color: Colors.yellow,
+                          ),
+                        ),
+                        TextButton(
+                          style: TextButton.styleFrom(
+                              padding: const EdgeInsets.all(16.0),
+                              primary: Colors.black,
+                              textStyle: const TextStyle(fontSize: 20),
+                              minimumSize: const Size(200, 70)),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const HomePage()));
+                          },
+                          child: const Text('Home'),
+                        ),
+                      ],
+                    ))),
           ],
-        )
-        // Column(children: [
-        //   Row(children: const [
-        //     Text("Thank you for visiting the"),
-        //     Text("Wildlife Garden"),
-        //     Text("Exhibit"),
-        //   ]),
-        //   const Divider(
-        //     thickness: 5,
-        //   ),
-        //   Row(
-        //     children: const [
-        //       Text("Further Reading"),
-        //       Text(
-        //           "https://www.nhm.ac.uk/visit/galleries-and-museum-map/wildlife-garden.html")
-        //     ],
-        //   )
-        // ]),
-        );
+        ),
+      ),
+    );
   }
 }
